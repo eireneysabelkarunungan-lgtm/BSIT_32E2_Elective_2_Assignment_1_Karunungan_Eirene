@@ -36,7 +36,23 @@ namespace BSIT_32E2_Elective_2_Assignment_1.Controllers
                     },
                     CorrectAnswer = 'B',
                     Explanation = "Controller adds view support on top of ControllerBase. APIs don't need views, so the lighter base class is used."
+                },
+                new()
+                {
+                    Number = 3,
+                    Question = "Which framework attribute automatically triggers an HTTP 400 Bad Request response when incoming request payloads fail structural model validation?",
+                    Options = new()
+                    {
+                        ['A'] = "[Route]",
+                        ['B'] = "[HttpGet]",
+                        ['C'] = "[ApiController]",
+                        ['D'] = "[FromQuery]"
+                    },
+                    CorrectAnswer = 'C',
+                    Explanation = "[ApiController] enables automatic model validation responses (400), plus binding source inference."
                 }
+
+
             };
 
             return View(questions);
