@@ -127,7 +127,7 @@ namespace BSIT_32E2_Elective_2_Assignment_1.Controllers
             return View(questions);
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }

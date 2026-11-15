@@ -1,35 +1,61 @@
 ﻿@model List<BSIT_32E2_Elective_2_Assignment_1_Karunungan_Eirene.Models.QuizQuestion>
 @{
-    ViewData["Title"] = "MVC Assignment Answers";
+    ViewData["Title"] = "Home";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="quiz-page">
 
+    <section class="quiz-hero">
+        <p class="quiz-eyebrow">Prelim &middot; Assignment 1</p>
+        <h1 class="quiz-hero-title">Web API &amp; REST <span>Quiz Answers</span></h1>
+        <p class="quiz-hero-text">
+            Answers to the Server-Side Rendering, Web API, and REST questions.
+            The correct choice for each item is highlighted.
+        </p>
 
-<p class="text-muted">BSIT 32E2 – Elective 2 – Assignment 1</p>
-
-@foreach (var q in Model)
-{
-
-
-
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">@q.Number. @q.Question</h5>
-            <ul class="list-unstyled">
-
-                @foreach (var opt in q.Options)
-                {
-                    var isCorrect = opt.Key == q.CorrectAnswer;
-                    <li class="@(isCorrect ? "fw-bold text-success" : "")">
-                        @opt.Key) @opt.Value @(isCorrect ? "✔" : "")
-                    </li>
-                }
-            </ul>
-
-
-            <p class="mb-0"><strong>Answer: @q.CorrectAnswer</strong> – @q.Explanation</p>
-            @* <p class="mb-0"Answer: @q.CorrectAnswer – @q.Explanation</p> *@
+        <div class="quiz-stats">
+            <div class="quiz-stat">
+                <strong>@Model.Count</strong>
+                <span>Questions</span>
+            </div>
+            <div class="quiz-stat">
+                <strong>MCQ</strong>
+                <span>Format</span>
+            </div>
+            <div class="quiz-stat">
+                <strong>.NET 8</strong>
+                <span>Framework</span>
+            </div>
         </div>
+    </section>
+
+    <div class="quiz-list">
+        @foreach (var q in Model)
+        {
+            <article class="quiz-q">
+                <div class="quiz-q-head">
+                    <span class="quiz-q-num">@q.Number</span>
+                    <h2 class="quiz-q-text">@q.Question</h2>
+                </div>
+
+                <div class="quiz-options">
+                    @foreach (var opt in q.Options)
+                    {
+                        var isCorrect = opt.Key == q.CorrectAnswer;
+                        <div class="quiz-option @(isCorrect ? "correct" : "")">
+                            <span class="quiz-key">@opt.Key</span>
+                            <span class="quiz-option-text">@opt.Value</span>
+                            @if (isCorrect)
+                            {
+                                <span class="quiz-tag">&#10003; My answer</span>
+                            }
+                        </div>
+                    }
+                </div>
+
+                <p class="quiz-explain"><strong>Why:</strong> @q.Explanation</p>
+            </article>
+        }
     </div>
-}
+
+</div>
