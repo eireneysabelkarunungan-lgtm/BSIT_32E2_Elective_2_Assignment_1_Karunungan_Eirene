@@ -78,8 +78,21 @@ namespace BSIT_32E2_Elective_2_Assignment_1.Controllers
                     },
                     CorrectAnswer = 'C',
                     Explanation = "204 No Content means the operation succeeded and there is nothing to return."
+                } ,
+                new()
+                {
+                    Number = 6,
+                    Question = "Which of the following endpoint URIs follows RESTful resource-oriented naming best practices?",
+                    Options = new()
+                    {
+                        ['A'] = "GET /api/getAllCourses",
+                        ['B'] = "GET /api/courses",
+                        ['C'] = "POST /api/createNewCourseRecord",
+                        ['D'] = "POST /api/deleteCourseById?id=5"
+                    },
+                    CorrectAnswer = 'B',
+                    Explanation = "REST uses plural nouns for resources; the HTTP verb expresses the action, not the URI."
                 }
-
             };
 
             return View(questions);
