@@ -92,7 +92,38 @@ namespace BSIT_32E2_Elective_2_Assignment_1.Controllers
                     },
                     CorrectAnswer = 'B',
                     Explanation = "REST uses plural nouns for resources; the HTTP verb expresses the action, not the URI."
+                },
+                new()
+                {
+                    Number = 7,
+                    Question = "What is the primary function of the [Route(\"api/[controller]\")] attribute in ASP.NET Core?",
+                    Options = new()
+                    {
+                        ['A'] = "It connects the controller directly to an Entity Framework database context.",
+                        ['B'] = "It maps incoming URI request paths to the controller class using the class name token.",
+                        ['C'] = "It encrypts all incoming JSON payloads.",
+                        ['D'] = "It enables Cross-Origin Resource Sharing (CORS) for external React apps."
+                    },
+                    CorrectAnswer = 'B',
+                    Explanation = "[controller] is replaced by the class name minus 'Controller', so CoursesController maps to /api/courses."
+                },
+                new()
+                {
+                    Number = 8,
+                    Question = "Which HTTP verb is safe and idempotent, intended exclusively for retrieving resource data without altering server state?",
+                    Options = new()
+                    {
+                        ['A'] = "POST",
+                        ['B'] = "PUT",
+                        ['C'] = "GET",
+                        ['D'] = "DELETE"
+                    },
+                    CorrectAnswer = 'C',
+                    Explanation = "GET only reads data, so repeating it never changes server state."
                 }
+
+                //return view;
+
             };
 
             return View(questions);
