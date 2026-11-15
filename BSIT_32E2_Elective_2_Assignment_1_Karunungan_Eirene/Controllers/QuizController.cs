@@ -50,9 +50,21 @@ namespace BSIT_32E2_Elective_2_Assignment_1.Controllers
                     },
                     CorrectAnswer = 'C',
                     Explanation = "[ApiController] enables automatic model validation responses (400), plus binding source inference."
+                }, 
+                new()
+                {
+                    Number = 4,
+                    Question = "Which HTTP status code should an API return after successfully creating a new resource via a POST request, along with a Location header pointing to the new URI?",
+                    Options = new()
+                    {
+                        ['A'] = "200 OK",
+                        ['B'] = "201 Created",
+                        ['C'] = "204 No Content",
+                        ['D'] = "404 Not Found"
+                    },
+                    CorrectAnswer = 'B',
+                    Explanation = "201 Created signals a new resource was made; the Location header tells the client where to find it."
                 }
-
-
             };
 
             return View(questions);
