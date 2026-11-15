@@ -64,7 +64,22 @@ namespace BSIT_32E2_Elective_2_Assignment_1.Controllers
                     },
                     CorrectAnswer = 'B',
                     Explanation = "201 Created signals a new resource was made; the Location header tells the client where to find it."
+                },
+                new()
+                {
+                    Number = 5,
+                    Question = "When a DELETE request successfully removes a resource from the server and returns no content in the response body, which HTTP status code is standard?",
+                    Options = new()
+                    {
+                        ['A'] = "200 OK",
+                        ['B'] = "201 Created",
+                        ['C'] = "204 No Content",
+                        ['D'] = "400 Bad Request"
+                    },
+                    CorrectAnswer = 'C',
+                    Explanation = "204 No Content means the operation succeeded and there is nothing to return."
                 }
+
             };
 
             return View(questions);
