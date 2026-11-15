@@ -1,4 +1,4 @@
-namespace BSIT_32E2_Elective_2_Assignment_1.Models
+namespace BSIT_32E2_Elective_2_Assignment_1_Karunungan_Eirene.Models
 {
     public class QuizQuestion
     {
